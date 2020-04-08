@@ -48,7 +48,7 @@ async function main() {
         console.log(`Transaction has been evaluated, result is: ${resultTwo.toString()}`);
 
     } catch (error) {
-        console.error(`Failed to evaluate transaction: ${error}`);
+        console.error(`*`);
         process.exit(1);
     }
 }

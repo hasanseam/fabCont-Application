@@ -12,7 +12,7 @@ async function main() {
 
     var args = process.argv;
 
-    if (args.length < 6) {
+    if (args.length < 8) {
         console.log('usage: node addPrivateCont.js <cnr> <vgm> <type> <status> <target> <cargo>');
         process.exit(1);
     }

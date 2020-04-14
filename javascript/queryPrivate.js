@@ -10,6 +10,14 @@ const fs = require('fs');
 
 
 async function main() {
+
+    var args = process.argv;
+
+    if (args.length < 3) {
+        console.log('usage: node queryPrivate.js <cnr>');
+        process.exit(1);
+    }
+
     try {
         // load the network configuration
         const ccpPath = path.resolve(__dirname, '..', '..', 'first-network', 'connection-org1.json');
@@ -41,7 +49,7 @@ async function main() {
         // Evaluate the specified transaction.
         // queryCar transaction - requires 1 argument, ex: ('queryCar', 'CAR4')
         // queryAllCars transaction - requires no arguments, ex: ('queryAllCars')
-        const result = await contract.evaluateTransaction('queryPrivateCont', 'ABCD1234567');
+        const result = await contract.evaluateTransaction('queryPrivateCont', args[2]);
         console.log(`${result.toString()}`);
 
         const resultTwo = await contract.evaluateTransaction('queryPrivateContDetails', 'ABCD1234567');

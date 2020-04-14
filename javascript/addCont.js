@@ -9,6 +9,14 @@ const fs = require('fs');
 const path = require('path');
 
 async function main() {
+
+    var args = process.argv;
+
+    if (args.length < 6) {
+        console.log('usage: node addCont.js <cnr> <vgm> <type> <status> <target> <cargo>');
+        process.exit(1);
+    }
+
     try {
         // load the network configuration
         const ccpPath = path.resolve(__dirname, '..', '..', 'first-network', 'connection-org1.json');
@@ -40,7 +48,7 @@ async function main() {
         // Submit the specified transaction.
         // createCar transaction - requires 5 argument, ex: ('createCar', 'CAR12', 'Honda', 'Accord', 'Black', 'Tom')
         // changeCarOwner transaction - requires 2 args , ex: ('changeCarOwner', 'CAR10', 'Dave')
-        await contract.submitTransaction('createCont', '456', '555', 'FT20', 'verladen', 'Duisburg');
+        await contract.submitTransaction('createCont', args[2], args[3], args[4], args[5], args[6]);
         console.log('Transaction has been submitted');
 
         // Disconnect from the gateway.

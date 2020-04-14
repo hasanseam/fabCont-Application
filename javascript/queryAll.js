@@ -39,7 +39,8 @@ async function main() {
         const contract = network.getContract('fabcont');
 
         // Evaluate the specified transaction.
-        const result = await contract.evaluateTransaction('queryAllConts');
+        var result = await contract.evaluateTransaction('queryAllConts');
+	result = result + (await contract.evaluateTransaction('queryAllPrivate'));
         console.log(`${result.toString()}`);
 
     } catch (error) {

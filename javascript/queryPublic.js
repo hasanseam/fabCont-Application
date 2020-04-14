@@ -10,6 +10,14 @@ const fs = require('fs');
 
 
 async function main() {
+
+    var args = process.argv;
+
+   if (args.length < 3) {
+	console.log('usage: node queryPublic.js <cnr>');
+	process.exit(1)
+   }
+
     try {
         // load the network configuration
         const ccpPath = path.resolve(__dirname, '..', '..', 'first-network', 'connection-org1.json');
@@ -39,7 +47,7 @@ async function main() {
         const contract = network.getContract('fabcont');
 
         // Evaluate the specified transaction.
-        const result = await contract.evaluateTransaction('queryAllConts');
+        const result = await contract.evaluateTransaction('queryCont', args[2]);
         console.log(`${result.toString()}`);
 
     } catch (error) {

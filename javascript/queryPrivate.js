@@ -52,7 +52,7 @@ async function main() {
         const result = await contract.evaluateTransaction('queryPrivateCont', args[2]);
         console.log(`${result.toString()}`);
 
-        const resultTwo = await contract.evaluateTransaction('queryPrivateContDetails', 'ABCD1234567');
+        const resultTwo = await contract.evaluateTransaction('queryPrivateContDetails', args[2]);
         console.log(`${resultTwo.toString()}`);
 
     } catch (error) {

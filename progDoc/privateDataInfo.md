@@ -7,3 +7,8 @@
 
 # Instantiate connections config (json)
 - peer chaincode instantiate --channelID mychannel --collections-config github.com/hyperledger/fabric-samples/chaincode/fabcont/collections_config.json 
+
+
+---
+
+- The hash of private data can also only be queried by authorized users ( -> tried to output hash for unauthorized user)

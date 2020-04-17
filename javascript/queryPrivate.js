@@ -55,6 +55,9 @@ async function main() {
         const resultTwo = await contract.evaluateTransaction('queryPrivateContDetails', args[2]);
         console.log(`${resultTwo.toString()}`);
 
+        // Not working yet, outputs garbage (marc)
+        // const resultThree = await contract.evaluateTransaction('queryPrivateContHash', args[2]);
+        // console.log(`${resultThree.toString()}`);
     } catch (error) {
         console.error(`${error}`);
         process.exit(1);

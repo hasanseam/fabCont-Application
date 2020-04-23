@@ -47,17 +47,9 @@ async function main() {
         const contract = network.getContract('fabcont');
 
         // Evaluate the specified transaction.
-        // queryCar transaction - requires 1 argument, ex: ('queryCar', 'CAR4')
-        // queryAllCars transaction - requires no arguments, ex: ('queryAllCars')
-        const result = await contract.evaluateTransaction('queryPrivateCont', args[2]);
-        console.log(`${result.toString()}`);
-
         const resultTwo = await contract.evaluateTransaction('queryPrivateContDetails', args[2]);
         console.log(`${resultTwo.toString()}`);
 
-        // Not working yet, outputs garbage (marc)
-        // const resultThree = await contract.evaluateTransaction('queryPrivateContHash', args[2]);
-        // console.log(`${resultThree.toString()}`);
     } catch (error) {
         console.error(`${error}`);
         process.exit(1);

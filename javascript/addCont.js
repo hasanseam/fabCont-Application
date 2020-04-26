@@ -12,8 +12,8 @@ async function main() {
 
     var args = process.argv;
 
-    if (args.length < 6) {
-        console.log('usage: node addCont.js <cnr> <vgm> <type> <status> <target> <cargo>');
+    if (args.length < 9) {
+        console.log('usage: node addPrivateCont.js <cnr> <vgm> <type> <status> <target> <cargo> <location>');
         process.exit(1);
     }
 
@@ -48,7 +48,8 @@ async function main() {
         // Submit the specified transaction.
         // createCar transaction - requires 5 argument, ex: ('createCar', 'CAR12', 'Honda', 'Accord', 'Black', 'Tom')
         // changeCarOwner transaction - requires 2 args , ex: ('changeCarOwner', 'CAR10', 'Dave')
-        await contract.submitTransaction('createCont', args[2], args[3], args[4], args[5], args[6]);
+
+        await contract.submitTransaction('createCont', args[2], args[3], args[4], args[5], args[6], args[7], args[8]);
         console.log('Transaction has been submitted');
 
         // Disconnect from the gateway.

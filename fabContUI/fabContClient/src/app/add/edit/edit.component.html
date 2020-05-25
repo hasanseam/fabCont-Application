@@ -1,0 +1,49 @@
+<div class="container">
+    <hr>
+    <form #updateContainerForm = "ngForm"  (ngSubmit)="updateFormSubmit(updateContainerForm)">
+      <br>
+      <div class="form-group row">
+            <label for="make" class="col-sm-2 col-form-label">Container No</label>
+            <div class="col-sm-3">
+              <input disabled = true  type="text" class="form-control" id="container" name="container" [(ngModel)]="container.cnr" >
+            </div>
+      </div>
+      <div class="form-group row">
+        <label for="model" class="col-sm-2 col-form-label">VGM</label>
+        <div class="col-sm-3">
+          <input type="text" class="form-control" id="vgma" name="vgma" [(ngModel)]="container.vgm" >
+        </div>
+      </div>
+      <div class="form-group row">
+          <label for="colour" class="col-sm-2 col-form-label">Type</label>
+          <div class="col-sm-3">
+            <input type="text" class="form-control" id="type" name="type" [(ngModel)]="container.type" >
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="owner" class="col-sm-2 col-form-label">Status</label>
+          <div class="col-sm-3">
+            <input type="text" class="form-control" id="status" name="status" [(ngModel)]="container.status">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="owner" class="col-sm-2 col-form-label">Target</label>
+          <div class="col-sm-3">
+            <input type="text" class="form-control" id="owner" name="owner" [(ngModel)]="container.target">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="owner" class="col-sm-2 col-form-label">Cargo</label>
+          <div class="col-sm-3">
+            <input type="text" class="form-control" id="cargo" name="cargo" [(ngModel)]="container.cargo">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="owner" class="col-sm-2 col-form-label">Location</label>
+          <div class="col-sm-3">
+            <input type="text" class="form-control" id="location" name="location" [(ngModel)]="container.location">
+          </div>
+        </div>
+        <button type="submit" class="btn btn-success">Update</button>
+      </form>
+</div>

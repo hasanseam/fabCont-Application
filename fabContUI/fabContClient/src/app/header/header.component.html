@@ -1,0 +1,27 @@
+<header>
+<nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+        <img src="../../assets/download.png" width="30" height="30" class="d-inline-block align-top" alt="">
+        FabCont
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse"
+           data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+           aria-expanded="false" aria-label="Toggle navigation"
+           (click)="toggleCollapsed()">
+          <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-nav" id="navbarSupportedContent" [ngClass]="{'collapse': collapsed, 'navbar-collapse': true}">
+          <a class="nav-item nav-link "  routerLink="/query" routerLinkActive="active">Query</a>
+          <a class="nav-item nav-link"  routerLink="/add" routerLinkActive="active">Add</a>
+    </div>
+    <form class="form-inline my-2 my-lg-0" #loginForm = "ngForm"  (ngSubmit)="loginFormSubmit(loginForm)">
+      <label id="label" class="form-control mr-sm-2">User Type</label>
+      <select id="inputState" class="form-control mr-sm-2" name="userType" [(ngModel)]="userName">
+        <option>Private</option>
+        <option>Public</option>
+      </select>
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Login</button>
+    </form>
+</nav>
+</header>
+

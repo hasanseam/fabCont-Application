@@ -1,0 +1,28 @@
+<div>Query Result</div>
+<hr>
+<div class="table-responsive-md">
+<table class="table  table-hover">
+  <thead class="thead-dark">
+        <tr>
+          <th>Container</th>
+          <th>VGM</th>
+          <th>Type</th>
+          <th>Status</th>
+          <th>Destination</th>
+          <th>Cargo</th>
+          <th>Location</th>
+        </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let result of results">
+      <td (click)="editContainer(result.CNR)"> {{result.CNR}}</td>
+      <td (click)="editContainer(result.CNR)">{{result.Record.vgm}}</td>
+      <td (click)="editContainer(result.CNR)">{{result.Record.type}}</td>
+      <td (click)="editContainer(result.CNR)">{{result.Record.status}}</td>
+      <td (click)="editContainer(result.CNR)">{{result.Record.destination}}</td>
+      <td (click)="editContainer(result.CNR)">{{result.PrivRecord.cargo}}</td>
+      <td (click)="editContainer(result.CNR)">{{result.PrivRecord.location}}</td>
+    </tr>
+  </tbody>
+  </table>
+</div>
